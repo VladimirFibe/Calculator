@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  @IBOutlet var buttons: [UIButton]!
   @IBOutlet weak var display: UILabel!
   var userIsInTheMiddleOfTyping = false
   private var brain = CalculatorBrain()
@@ -40,6 +42,13 @@ class ViewController: UIViewController {
       displayValue = result
     }
   }
-  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    buttons.forEach {
+      let height = $0.frame.height
+      $0.layer.cornerRadius = height / 2
+      $0.titleLabel?.font = .systemFont(ofSize: 0.5 * height)
+    }
+  }
 }
 
