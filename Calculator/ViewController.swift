@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  @IBOutlet weak var zero: UIButton!
   @IBOutlet var buttons: [UIButton]!
   @IBOutlet weak var display: UILabel!
   var userIsInTheMiddleOfTyping = false
@@ -44,11 +45,15 @@ class ViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    let height = 0.5 * zero.frame.height
+    let width = 0.5 * (zero.titleLabel?.intrinsicContentSize.width ?? 0)
     buttons.forEach {
-      let height = $0.frame.height
-      $0.layer.cornerRadius = height / 2
-      $0.titleLabel?.font = .systemFont(ofSize: 0.5 * height)
+      $0.layer.cornerRadius = height
+      $0.titleLabel?.font = .systemFont(ofSize: height)
     }
+    zero.contentHorizontalAlignment = .leading
+    zero.titleEdgeInsets = UIEdgeInsets(top: 0, left: height - width, bottom: 0, right: 0)
   }
 }
 
+// http://www.appbuildingblocks.com/build-ios-calculator-app-tutorial-part-1/

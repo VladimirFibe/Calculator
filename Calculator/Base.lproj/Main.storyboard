@@ -248,7 +248,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9fO-JV-tCs">
                                                 <rect key="frame" x="0.0" y="382" width="374" height="87.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftW-iu-T03">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftW-iu-T03">
                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="87.5"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -306,6 +306,7 @@
                     </view>
                     <connections>
                         <outlet property="display" destination="Efp-yo-krs" id="oSS-nX-7iT"/>
+                        <outlet property="zero" destination="ftW-iu-T03" id="pAV-Rn-t1U"/>
                         <outletCollection property="buttons" destination="9jH-br-x6O" collectionClass="NSMutableArray" id="ZBj-tP-SDt"/>
                         <outletCollection property="buttons" destination="EgT-cn-ftA" collectionClass="NSMutableArray" id="S4I-8h-CeN"/>
                         <outletCollection property="buttons" destination="9qJ-SQ-NZ9" collectionClass="NSMutableArray" id="C7g-Wd-opB"/>
