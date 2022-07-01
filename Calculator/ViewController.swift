@@ -45,10 +45,13 @@ class ViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+  }
+  override func viewWillAppear(_ animated: Bool) {
     let height = 0.5 * zero.frame.height
     let width = 0.5 * (zero.titleLabel?.intrinsicContentSize.width ?? 0)
     buttons.forEach {
-      $0.layer.cornerRadius = height
+      $0.layer.cornerRadius = height - 4
       $0.titleLabel?.font = .systemFont(ofSize: height)
     }
     zero.contentHorizontalAlignment = .leading
