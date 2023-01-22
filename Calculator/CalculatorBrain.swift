@@ -11,10 +11,10 @@ struct CalculatorBrain {
   private var accumulator: Double?
   
   private var operations: Dictionary<String, Operation> = [
+    "AC": Operation.constant(0),
     "𝝅": Operation.constant(Double.pi),
     "e": Operation.constant(M_E),
-    "√": Operation.unaryOperation(sqrt),
-    "cos": Operation.unaryOperation(cos),
+    "%": Operation.unaryOperation({$0 / 100.0}),
     "±": Operation.unaryOperation({-$0}),
     "+": Operation.binaryOperation({$0 + $1}),
     "-": Operation.binaryOperation({$0 - $1}),
