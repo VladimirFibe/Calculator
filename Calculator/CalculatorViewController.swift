@@ -1,7 +1,6 @@
 import SwiftUI
 
 class CalculatorViewController: UIViewController {
-    #warning("поправить ввод десятично точки")
     var displayValue: Double {
         get {
             let text = display.text ?? "0"
@@ -105,15 +104,15 @@ class CalculatorViewController: UIViewController {
         }
     }
     @objc func performOperation(_ sender: UIButton) {
-      if userIsInTheMiddleOfTyping {
-        brain.setOperand(displayValue)
-        userIsInTheMiddleOfTyping = false
-      }
-      guard let mathematicalSymbol = sender.currentTitle else { return }
-      brain.performOperation(mathematicalSymbol)
-      if let result = brain.result {
-        displayValue = result
-      }
+        if userIsInTheMiddleOfTyping {
+            brain.setOperand(displayValue)
+            userIsInTheMiddleOfTyping = false
+        }
+        guard let mathematicalSymbol = sender.currentTitle else { return }
+        brain.performOperation(mathematicalSymbol)
+        if let result = brain.result {
+            displayValue = result
+        }
     }
 }
 

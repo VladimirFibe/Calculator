@@ -21,7 +21,7 @@ enum CalculatorButton: String {
     case ac = "AC"
     case plusMinus = "±"
     case perecent = "%"
-        
+    
     var title: String {
         rawValue
     }
