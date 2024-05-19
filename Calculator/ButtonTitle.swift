@@ -1,7 +1,6 @@
 import UIKit
 
-enum CalculatorButton: String {
-    case doubleZero = "00"
+enum ButtonTitle: String {
     case zero = "0"
     case one = "1"
     case two = "2"
@@ -22,7 +21,7 @@ enum CalculatorButton: String {
     case plusMinus = "±"
     case perecent = "%"
     
-    var title: String {
+    var text: String {
         rawValue
     }
     
@@ -38,6 +37,15 @@ enum CalculatorButton: String {
         switch self {
         case .ac, .plusMinus, .perecent: return .systemBackground
         default: return .label
+        }
+    }
+
+    var isDigit: Bool {
+        switch self {
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .point :
+            return true
+        default:
+            return false
         }
     }
 }
